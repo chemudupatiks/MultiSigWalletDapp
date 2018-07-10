@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      div {
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="MultiSigHeading">A Simple MultiSigWallet: Requires permission from three voters to get funding!</h1>
+      <div style ="padding-bottom:0px" id="inActive">
+        <label style="font-weight:bold">Contribute Money:</label>
+        <input id="inputContribution" placeholder="Please enter value in ethers">
+        <button id="SubmitContribution">Submit</button>
+        <hr/>
+        <label style="font-weight:bold">Please click this to end the contribution period (only for signers):</label>
+        <button id="EndContribution">End</button>
+      </div>
+      <div id="contributions" >
+        <h2 style="font-weight:bold; text-align:center">Contributors</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" style="text-align:center">Contributor</th>
+              <th scope="col" style="text-align:center">Amount in Ethers</th>
+            </tr>
+          </thead>
+          <tbody id="contributorsAmounts">
+          </tbody>
+        </table>
+        <hr/>
+      </div>
+      <div id="Active">
+        <label style="font-weight:bold">Submit a Proposal:</label>
+        <input id="inputProposal" placeholder="Please enter value in ethers">
+        <button id="SubmitProposal">Submit</button>
+
+        <label style="font-weight:bold">Withdraw Amount :</label>
+        <input id="withdrawAmount" placeholder="Please enter value in ethers">
+        <button id="withdrawEther">Submit</button>
+        <hr/>
+        <label style="font-weight:bold">Vote on a beneficiary :</label>
+        <input id="beneficiary" placeholder="Please enter the address">
+        <button id="approve">Approve</button>
+        <button id="reject">Reject</button>
+        <hr/>
+        <div id="openProposals"><!--style="display:none;"-->
+          <h2 style="font-weight:bold; text-align:center">Open Proposals</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align:center">Beneficiary</th>
+                <th scope="col" style="text-align:center">Votes Given</th>
+                <th scope="col" style="text-align:center">Signer #1</th>
+                <th scope="col" style="text-align:center">Signer #2</th>
+                <th scope="col" style="text-align:center">Signer #3</th>
+              </tr>
+            </thead>
+          </table>
+          <hr/>
+        </div>
+      </div>
+      <p id="accountAddress" class="text-center"></p>
+      <div id="loader">
+        <p class="text-center">
+          Loading...
+        </p>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
